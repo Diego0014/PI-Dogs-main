@@ -1,0 +1,52 @@
+.divOrder {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin:20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+  }
+  .imgContainer {
+    margin: 15px;
+    flex: 50%;
+  }
+  
+  .imgDogs {
+    width: 30vw;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  .dataOrder {
+    flex: 50%;
+    border-radius: 10px;
+    border: 2px solid #3e0c897f;
+    margin: 10px;
+  }
+  .btnMore {
+      background-color: #7f4caf; 
+      border: none;
+      border-radius: 10px;
+      color: white;
+      padding: 7px 14px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+    }
+    .btnMore:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+  
+  @media (max-width: 800px) {
+    .divOrder {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,57 @@
+body {
+  height: 100%;
+  background-image: url("./backround.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.title {
+  float: left;
+  margin: 50px;
+  color: white;
+}
+
+.enterBtnDiv {
+  float: right;
+  margin-right: 30px;
+  margin-top: 85vh;
+}
+.enterBtn:hover {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: gold;
+  font-size: large;
+}
+/* a {
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 1.5em;
+  font-style: bold;
+  text-decoration: none;
+  color: black;
+} */
+
+.containerT {
+  float: left;
+  margin: 20vh -33vh;
+  color: white;
+}
+.typedOut {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  animation: typing 1s forwards;
+  font-size: 1.6rem;
+  width: 0;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
