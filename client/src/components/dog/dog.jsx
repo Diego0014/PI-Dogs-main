@@ -13,9 +13,10 @@ export default function Dog({
   weight,
   temperament,
 }) {
-  let getMinMax = weight.split("-");
-  let min = getMinMax[0];
-  let max = getMinMax[1];
+
+  let getMinMaxWeight = weight.split("-");
+  let minWeight = getMinMaxWeight[0];
+  let maxWeight = getMinMaxWeight[1];
   return (
     <div className={style.divOrder}>
       <div className={style.imgContainer}>
@@ -25,11 +26,11 @@ export default function Dog({
         <h3>{name}</h3>
         <p>Weight</p>
         <p>
-          Min: {min} Max: {max}
+          Min: {minWeight} Max: {maxWeight}
         </p>
         <p>{temperament}</p>
         <Link to={`/home/${id}`}>
-          <button className={style.btnMore}  >See more</button>
+          <button className={style.btnMore}>See more</button>
         </Link>
       </div>
     </div>

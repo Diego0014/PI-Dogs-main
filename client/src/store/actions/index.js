@@ -5,6 +5,7 @@ export const GET_DOG_BY_NAME = "GET_DOG_BY_NAME";
 export const GET_DOG_BY_ID = "GET_DOG_BY_ID";
 export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 export const SORT = "SORT";
+export const POST = "POST";
 
 export function fetchDogs() {
   return function (dispatch) {
@@ -63,6 +64,7 @@ export function orderById(id) {
 
 export function getTemperaments() {
   return function (dispatch) {
+    
     axios
       .get("http://localhost:3001/api/temperaments")
       .then((temperaments) => {
@@ -74,5 +76,12 @@ export function getTemperaments() {
       .catch((error) => {
         console.log(error);
       });
+  };
+}
+
+export function post(payload) {
+  return async (dispatch) => {
+    await axios.post("http://localhost:3001/api/dogss", payload);
+    return dispatch({ type: POST });
   };
 }

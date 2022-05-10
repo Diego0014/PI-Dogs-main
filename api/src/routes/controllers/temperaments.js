@@ -1,22 +1,15 @@
 const { Router } = require("express");
 const { Temperament } = require("../../db");
-
+const awaitForTemperaments = require("../../../resources/index");
 const router = Router();
 
-/* router.get("/", (req, res, next) => {
+router.get("/", async(req, res, next) => {
+  await awaitForTemperaments();
   return Temperament.findAll()
-    .then((temperaments) => res.status(200).send(temperaments))
+    .then((temperaments) => res.status(200).json(temperaments))
     .catch((err) =>next(err));
-}); */
+});
 
-router.get("/", async (req, res, next) => {
-  try{
-      const db = await Temperament.findAll()
-      return res.json(db).status(200)
-  } catch (e) {
-      return res.json(e.message).status(409)
-  }
-})
 
 router.post("/", async (req, res, next) => {
   try {

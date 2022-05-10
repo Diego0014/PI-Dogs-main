@@ -1,0 +1,44 @@
+.pageOrder {
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+  justify-content: center;
+}
+.btnPag {
+    background-color: #7f4caf; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+.btnPag:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+button[disabled] {
+    background-color:grey;
+    cursor:no-drop;
+}
+.searchPage{
+    border:1px solid rgb(113, 113, 113);
+    width:2rem;
+    height:1rem;
+    display: flex;
+    background-color:rgba(196, 196, 196, 0.193);
+    padding:3px 7px;
+    margin-top: 4px;
+    justify-content:center;
+}
+
+@media (max-width: 800px) {
+    .pageOrder {
+      flex-direction: row;
+    }
+  }

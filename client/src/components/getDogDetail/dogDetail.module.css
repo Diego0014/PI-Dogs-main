@@ -8,8 +8,9 @@
     backdrop-filter: blur(5px);
   }
   .imgContainer {
-    margin: 15px;
-    flex: 50%;
+    margin: 45px;
+    flex: 30%;
+    align-content: center;
   }
   
   .imgDogs {

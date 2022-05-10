@@ -1,19 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDogs } from "../../store/actions";
 import Dog from "../dog/dog";
-import Nav from "../navBar/navBar";
+import Pagination from "../pagination/pagination";
 
 export default function Dogs() {
   let dogs = useSelector((state) => state.filteredDogs);
   let dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const [perPage] = useState(8);
+
+  const maxPage = Math.ceil(dogs.length / perPage);
   useEffect(() => {
     dispatch(fetchDogs());
-  }, []);
+  },
+  // eslint-disable-next-line 
+  []);
+
 
   return (
     <div>
-      {dogs.map((eachDog) => {
+      {dogs
+      .slice((page-1)*perPage, (page-1)*perPage+perPage)
+      .map((eachDog) => {
         return (
           <Dog
             key={eachDog.id}
@@ -29,6 +38,7 @@ export default function Dogs() {
           />
         );
       })}
+      <Pagination page={page} setPage={setPage} maxPage={maxPage} />
     </div>
   );
 }
